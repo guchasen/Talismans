@@ -1,6 +1,7 @@
 package com.guchasen.talismans.items;
 
 import com.guchasen.talismans.Talismans;
+import com.guchasen.talismans.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -18,6 +19,9 @@ public class ModItemGroups {
                     .displayName(Text.translatable("itemGroup.talismans")) // 物品栏名称
                     .icon(() -> new ItemStack(ModItems.THUNDER_TALISMAN)) // 物品栏图标
                     .entries((displayContext, entries) -> {
+                        entries.add(ModBlocks.TALISMAN_CRAFTING_TABLE);
+                        entries.add(ModItems.TALISMAN_PEN);
+                        entries.add(ModItems.TALISMAN_PAPER);
                         entries.add(ModItems.THUNDER_TALISMAN);
                         entries.add(ModItems.LUCK_TALISMAN);
                         entries.add(ModItems.FIRE_RESISTANCE_TALISMAN);

@@ -31,5 +31,7 @@ public class ModChineseLanguageProvider extends FabricLanguageProvider {
 //        translationBuilder.add(ModItems.WONDERFUL_STRENGTH_TALISMAN, "神力符");
 //        translationBuilder.add(ModItems.REGENERATION_TALISMAN, "回春符");
 //        translationBuilder.add(ModItems.INSTANT_HEALTH_TALISMAN, "续气符");
+          translationBuilder.add(ModItems.TALISMAN_PEN, "制符笔");
+          translationBuilder.add(ModItems.TALISMAN_PAPER, "符纸");
     }
 }

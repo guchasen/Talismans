@@ -1,8 +1,12 @@
 package com.guchasen.talismans;
 
-import com.guchasen.talismans.entity.ModEntities;
+
+import com.guchasen.talismans.block.ModBlocks;
+import com.guchasen.talismans.block.entity.ModBlockEntities;
 import com.guchasen.talismans.items.ModItemGroups;
 import com.guchasen.talismans.items.ModItems;
+import com.guchasen.talismans.recipe.ModRecipes;
+import com.guchasen.talismans.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -21,5 +25,13 @@ public class Talismans implements ModInitializer {
 		ModItems.registerModItems();
 		//register item groups
 		ModItemGroups.registerItemGroups();
+		//register blocks
+		ModBlocks.registerModBlocks();
+		//register block entities
+		ModBlockEntities.registerBlockEntities();
+		//register screen handlers
+		ModScreenHandlers.registerScreenHandlers();
+		//register recipes
+		ModRecipes.registerRecipes();
 	}
 }

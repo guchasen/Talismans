@@ -1,0 +1,18 @@
+{
+  "type": "talismans:talisman_crafting",
+  "ingredients": [
+    {
+      "item": "talismans:talisman_pen"
+    },
+    {
+      "item": "talismans:talisman_paper"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "output": {
+    "item": "talismans:thunder_talisman",
+    "count": 1
+  }
+}

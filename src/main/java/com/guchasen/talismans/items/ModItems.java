@@ -20,8 +20,12 @@ public class ModItems {
         return Registry.register(Registries.ITEM, Identifier.of(MOD_ID, name), item);
     }
 
-    public static final Item STRENGTH_TALISMAN= registerItem("strength_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.STRENGTH,600,1));
+    // 制符工具
+    public static final Item TALISMAN_PEN = registerItem("talisman_pen", new TalismanPenItem(new Item.Settings().rarity(Rarity.UNCOMMON)));
+    public static final Item TALISMAN_PAPER = registerItem("talisman_paper", new TalismanPaperItem(new Item.Settings().maxCount(64)));
 
+    // 符箓物品
+    public static final Item STRENGTH_TALISMAN= registerItem("strength_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.STRENGTH,600,1));
     public static final Item JUMP_TALISMAN = registerItem("jump_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.JUMP_BOOST,200,0));
     public static final Item INVISIBILITY_TALISMAN = registerItem("invisibility_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.INVISIBILITY,1200,0));
     public static final Item LUCK_TALISMAN = registerItem("luck_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.LUCK,1800,0));
@@ -30,17 +34,11 @@ public class ModItems {
     public static final Item FIRE_RESISTANCE_TALISMAN = registerItem("fire_resistance_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON),StatusEffects.FIRE_RESISTANCE,600,0));
     public static final Item WATER_BREATHING_TALISMAN = registerItem("water_breathing_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.WATER_BREATHING,600,0));
     public static final Item NIGHT_VISION_TALISMAN  = registerItem("night_vision_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.NIGHT_VISION,3600,0));
-
     public static final Item REGENERATION_TALISMAN = registerItem("regeneration_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.REGENERATION,600,0));
     public static final Item INSTANT_HEALTH_TALISMAN = registerItem("instant_health_talisman", new InstantHealthTalisman(new Item.Settings().rarity(Rarity.UNCOMMON), StatusEffects.INSTANT_HEALTH,1,1));
     public static final Item BETTER_LUCK_TALISMAN = registerItem("better_luck_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.RARE), StatusEffects.LUCK,1800,2));
     public static final Item BETTER_STRENGTH_TALISMAN = registerItem("better_strength_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.RARE), StatusEffects.STRENGTH,1200,4));
     public static final Item WONDERFUL_STRENGTH_TALISMAN = registerItem("wonderful_strength_talisman", new BaseBuffTalisman(new Item.Settings().rarity(Rarity.EPIC), StatusEffects.STRENGTH,1200,6));
-
-
-
-
-
     public static final Item THUNDER_TALISMAN = registerItem("thunder_talisman", new ThunderTalismanItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(16)));
 
     public static void registerModItems() {

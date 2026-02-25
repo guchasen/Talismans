@@ -1,4 +1,5 @@
 {
+  "block.talismans.talisman_crafting_table": "Talisman Crafting Table",
   "item.talismans.fire_resistance_talisman": "Fire Resistance Talisman",
   "item.talismans.invisibility_talisman": "Invisibility Talisman",
   "item.talismans.jump_talisman": "Jump Talisman",
@@ -19,5 +20,8 @@
   "item.talismans.better_strength_talisman": "Better Strength Talisman",
   "item.talismans.instant_health_talisman": "Instant Health Talisman",
   "item.talismans.regeneration_talisman": "Regeneration Talisman",
-  "item.talismans.wonderful_strength_talisman": "Wonderful Strength Talisman"
+  "item.talismans.wonderful_strength_talisman": "Wonderful Strength Talisman",
+  "tooltip.talismans.taliaman_table": "Talisman Table(Insert materials  then open again)",
+  "item.talismans.talisman_paper": "Talisman Paper",
+  "item.talismans.talisman_pen": "Talisman Pen"
 }

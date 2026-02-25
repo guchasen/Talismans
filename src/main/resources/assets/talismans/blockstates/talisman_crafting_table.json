@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "talismans:block/talisman_crafting_table"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 package com.guchasen.talismans.datagen;
 
 import com.guchasen.talismans.Talismans;
+import com.guchasen.talismans.block.ModBlocks;
 import com.guchasen.talismans.items.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -16,6 +17,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        //blockStateModelGenerator.registerSimpleState(ModBlocks.TALISMAN_CRAFTING_TABLE);
     }
 
     @Override
@@ -36,6 +38,9 @@ public class ModModelProvider extends FabricModelProvider {
 //        itemModelGenerator.register(ModItems.BETTER_LUCK_TALISMAN,Models.GENERATED);
 //        itemModelGenerator.register(ModItems.BETTER_STRENGTH_TALISMAN,Models.GENERATED);
 //        itemModelGenerator.register(ModItems.WONDERFUL_STRENGTH_TALISMAN,Models.GENERATED);
+        itemModelGenerator.register(ModItems.TALISMAN_PAPER,Models.GENERATED);
+        itemModelGenerator.register(ModItems.TALISMAN_PEN,Models.GENERATED);
+
 
 
     }
