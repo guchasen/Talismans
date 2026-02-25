@@ -1,0 +1,23 @@
+{
+  "item.talismans.fire_resistance_talisman": "Fire Resistance Talisman",
+  "item.talismans.invisibility_talisman": "Invisibility Talisman",
+  "item.talismans.jump_talisman": "Jump Talisman",
+  "item.talismans.luck_talisman": "Luck Talisman",
+  "item.talismans.night_vision_talisman": "Night Vision Talisman",
+  "item.talismans.resistance_talisman": "Resistance Talisman",
+  "item.talismans.speed_talisman": "Speed Talisman",
+  "item.talismans.strength_talisman": "Strength Talisman",
+  "item.talismans.thunder_talisman": "Thunder Talisman ",
+  "item.talismans.thunder_talisman.tooltip": "§7Throw to summon lightning",
+  "item.talismans.water_breathing_talisman": "Water Breathing Talisman",
+  "item.talismans.buff_talisman.tooltip": "Buff Talisman，use to get certain effects",
+  "item.talismans.buff_talisman.tooltip.effect": "Effect: %s",
+  "item.talismans.buff_talisman.tooltip.amplifier": "Amplifier: %s",
+  "item.talismans.buff_talisman.tooltip.duration": "Duration: %s seconds",
+  "itemGroup.talismans": "Talismans",
+  "item.talismans.better_luck_talisman": "Better Luck Talisman",
+  "item.talismans.better_strength_talisman": "Better Strength Talisman",
+  "item.talismans.instant_health_talisman": "Instant Health Talisman",
+  "item.talismans.regeneration_talisman": "Regeneration Talisman",
+  "item.talismans.wonderful_strength_talisman": "Wonderful Strength Talisman"
+}

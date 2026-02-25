@@ -3,9 +3,9 @@
 	"id": "talismans",
 	"version": "${version}",
 	"name": "Talismans",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "向游戏添加了一些道家风格的符箓，这些符箓有着不同的功能、效果",
 	"authors": [
-		"Me!"
+		"GuChasen"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"com.guchasen.talismans.TalismansDataGenerator"
+		],
+		"client": [
+			"com.guchasen.talismans.TalismansClient"
 		]
 	},
 	"mixins": [

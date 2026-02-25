@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "talismans:item/strength_talisman"
+    "layer0": "talismans:item/thunder_talisman"
   }
 }

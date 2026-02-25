@@ -1,5 +1,7 @@
 package com.guchasen.talismans;
 
+import com.guchasen.talismans.entity.ModEntities;
+import com.guchasen.talismans.items.ModItemGroups;
 import com.guchasen.talismans.items.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -13,7 +15,11 @@ public class Talismans implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		//LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Talismans Mod Starts");
+
+		//register items
 		ModItems.registerModItems();
+		//register item groups
+		ModItemGroups.registerItemGroups();
 	}
 }

@@ -1,0 +1,24 @@
+{
+  "item.talismans.fire_resistance_talisman": "抗火符",
+  "item.talismans.invisibility_talisman": "匿形符",
+  "item.talismans.jump_talisman": "强跃符",
+  "item.talismans.luck_talisman": "奇运符",
+  "item.talismans.night_vision_talisman": "夜明符",
+  "item.talismans.resistance_talisman": "强抗符",
+  "item.talismans.speed_talisman": "增速符",
+  "item.talismans.strength_talisman": "增力符",
+  "item.talismans.thunder_talisman": "落雷符",
+  "item.talismans.better_luck_talisman": "神运符",
+  "item.talismans.better_strength_talisman": "奇力符",
+  "item.talismans.instant_health_talisman": "续气符",
+  "item.talismans.regeneration_talisman": "回春符",
+  "item.talismans.wonderful_strength_talisman": "神力符",
+  "item.talismans.water_breathing_talisman": "水神符",
+
+  "item.talismans.thunder_talisman.tooltip": "§7投掷以召唤闪电",
+  "item.talismans.buff_talisman.tooltip": "长按右键使用",
+  "item.talismans.buff_talisman.tooltip.effect": "给予效果: %s",
+  "item.talismans.buff_talisman.tooltip.amplifier": "效果等级：%s",
+  "item.talismans.buff_talisman.tooltip.duration": "持续时间：%s 秒",
+  "itemGroup.talismans": "符箓"
+}
