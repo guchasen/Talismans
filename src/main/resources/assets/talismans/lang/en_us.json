@@ -21,7 +21,8 @@
   "item.talismans.instant_health_talisman": "Instant Health Talisman",
   "item.talismans.regeneration_talisman": "Regeneration Talisman",
   "item.talismans.wonderful_strength_talisman": "Wonderful Strength Talisman",
-  "tooltip.talismans.taliaman_table": "Talisman Table(Insert materials  then open again)",
+  "tooltip.talismans.talisman_table": "Talisman Craft Table",
   "item.talismans.talisman_paper": "Talisman Paper",
-  "item.talismans.talisman_pen": "Talisman Pen"
+  "item.talismans.talisman_pen": "Talisman Pen",
+  "button.talismans.craft": "Create"
 }

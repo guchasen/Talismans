@@ -1,0 +1,18 @@
+{
+  "type": "talismans:talisman_crafting",
+  "ingredients": [
+    {
+      "item": "talismans:talisman_pen"
+    },
+    {
+      "item": "talismans:talisman_paper"
+    },
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
+  "output": {
+    "item": "talismans:better_luck_talisman",
+    "count": 1
+  }
+}

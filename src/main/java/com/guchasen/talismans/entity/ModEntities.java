@@ -1,7 +1,7 @@
 package com.guchasen.talismans.entity;
 
 import com.guchasen.talismans.Talismans;
-import com.guchasen.talismans.entity.entities.ThunderTalismanEntity;
+import com.guchasen.talismans.entity.entities.ThrownTalismanEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
@@ -12,10 +12,10 @@ import net.minecraft.util.Identifier;
 
 public class ModEntities {
 
-    public static final EntityType<ThunderTalismanEntity> THUNDER_TALISMAN_ENTITY_TYPE = Registry.register(
+    public static final EntityType<ThrownTalismanEntity> THROWN_TALISMAN_ENTITY_RENDERER = Registry.register(
             Registries.ENTITY_TYPE,
-            new Identifier(Talismans.MOD_ID, "thunder_talisman"),
-            FabricEntityTypeBuilder.<ThunderTalismanEntity>create(SpawnGroup.MISC, ThunderTalismanEntity::new)
+            new Identifier(Talismans.MOD_ID, "thrown_talisman_entity"),
+            FabricEntityTypeBuilder.<ThrownTalismanEntity>create(SpawnGroup.MISC, ThrownTalismanEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
                     .trackRangeBlocks(4)
                     .trackedUpdateRate(10)

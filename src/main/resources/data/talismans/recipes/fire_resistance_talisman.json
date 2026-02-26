@@ -1,0 +1,21 @@
+{
+  "type": "talismans:talisman_crafting",
+  "ingredients": [
+    {
+      "item": "talismans:talisman_pen"
+    },
+    {
+      "item": "talismans:talisman_paper"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    }
+  ],
+  "output": {
+    "item": "talismans:fire_resistance_talisman",
+    "count": 1
+  }
+}

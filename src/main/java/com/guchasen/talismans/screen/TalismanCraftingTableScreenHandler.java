@@ -92,10 +92,10 @@ public class TalismanCraftingTableScreenHandler extends ScreenHandler {
         addPlayerHotbar(playerInventory);
         
         // Initial recipe check
-        updateResult();
+        // updateResult(); // Disable auto-update for button-based crafting
     }
 
-    private void updateResult() {
+    public void updateResult() {
         if (world.isClient) return;
         
         // Check for recipe
@@ -106,9 +106,39 @@ public class TalismanCraftingTableScreenHandler extends ScreenHandler {
                 .getFirstMatch(TalismanRecipe.Type.INSTANCE, inv, world);
 
         if (match.isPresent()) {
-            inventory.setStack(6, match.get().getOutput(null).copy());
-        } else {
-            inventory.setStack(6, ItemStack.EMPTY);
+            // Check if output slot is empty or compatible
+            ItemStack currentOutput = inventory.getStack(6);
+            ItemStack recipeOutput = match.get().getOutput(null).copy();
+            
+            if (currentOutput.isEmpty()) {
+                // Consume ingredients and set output
+                consumeIngredients();
+                inventory.setStack(6, recipeOutput);
+            } else if (currentOutput.isOf(recipeOutput.getItem()) && currentOutput.getCount() + recipeOutput.getCount() <= currentOutput.getMaxCount()) {
+                // Consume ingredients and increment output
+                consumeIngredients();
+                currentOutput.increment(recipeOutput.getCount());
+                inventory.setStack(6, currentOutput);
+            }
+        }
+    }
+
+    private void consumeIngredients() {
+        // Slot 0: Pen (Damage it)
+        ItemStack pen = inventory.getStack(0);
+        if (!pen.isEmpty() && pen.isDamageable()) {
+            pen.setDamage(pen.getDamage() + 1);
+            if (pen.getDamage() >= pen.getMaxDamage()) {
+                inventory.setStack(0, ItemStack.EMPTY);
+            }
+        }
+
+        // Slot 1: Paper (Consume 1)
+        inventory.removeStack(1, 1);
+
+        // Slot 2-5: Grid (Consume 1 each)
+        for (int i = 2; i <= 5; i++) {
+            inventory.removeStack(i, 1);
         }
     }
 
@@ -116,7 +146,7 @@ public class TalismanCraftingTableScreenHandler extends ScreenHandler {
     public void onContentChanged(Inventory inventory) {
         super.onContentChanged(inventory);
         // Only re-check if input slots changed (0-5)
-        updateResult();
+        // updateResult(); // Disable auto-update
     }
 
     @Override
@@ -180,26 +210,8 @@ public class TalismanCraftingTableScreenHandler extends ScreenHandler {
 
         @Override
         public void onTakeItem(PlayerEntity player, ItemStack stack) {
-            // Consume ingredients
-            // Slot 0: Pen (Damage it)
-            ItemStack pen = inventory.getStack(0);
-            if (!pen.isEmpty() && pen.isDamageable()) {
-                pen.setDamage(pen.getDamage() + 1);
-                if (pen.getDamage() >= pen.getMaxDamage()) {
-                    inventory.setStack(0, ItemStack.EMPTY);
-                }
-            }
-
-            // Slot 1: Paper (Consume 1)
-            inventory.removeStack(1, 1);
-
-            // Slot 2-5: Grid (Consume 1 each)
-            for (int i = 2; i <= 5; i++) {
-                inventory.removeStack(i, 1);
-            }
-
             super.onTakeItem(player, stack);
-            updateResult();
+            // Ingredients are consumed during crafting button press, not when taking item
         }
     }
 }

@@ -1,9 +1,13 @@
 package com.guchasen.talismans.screen;
 
 import com.guchasen.talismans.Talismans;
+import com.guchasen.talismans.network.ModMessages;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
@@ -21,6 +25,19 @@ public class TalismanCraftingTableScreen extends HandledScreen<TalismanCraftingT
         super.init();
         // Center the title
         titleX = (backgroundWidth - textRenderer.getWidth(title)) / 2;
+        
+        // Add "Craft" button
+        // Grid ends at x=78+18=96, Result is at x=130
+        // Center of gap is (96+130)/2 = 113
+        // Button width ~30-40
+        int buttonX = x + 61;
+        int buttonY = y + 64; // Centered vertically with result slot (y=36)
+        
+        this.addDrawableChild(ButtonWidget.builder(Text.translatable("button.talismans.craft"), (button) -> {
+            ClientPlayNetworking.send(ModMessages.CRAFT_TALISMAN_ID, PacketByteBufs.create());
+        })
+        .dimensions(buttonX, buttonY, 35, 15)
+        .build());
     }
 
     @Override

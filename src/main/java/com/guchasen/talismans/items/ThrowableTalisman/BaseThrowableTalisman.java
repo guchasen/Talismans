@@ -12,15 +12,26 @@ public class BaseThrowableTalisman extends Item {
     public BaseThrowableTalisman(Settings settings) {
         super(settings);
     }
-    protected static final int USE_TIME = 30;
+    
+    // Default use duration, can be overridden
+    protected int getUseDuration() {
+        return 30; // Default 1.5s (30 ticks), user requested specific times for each item
+    }
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
         user.setCurrentHand(hand);
         return TypedActionResult.consume(itemStack);
     }
+
     @Override
-    public UseAction getUseAction(ItemStack stack) {return UseAction.BOW;}
+    public UseAction getUseAction(ItemStack stack) {
+        return UseAction.BOW;
+    }
+
     @Override
-    public int getMaxUseTime(ItemStack stack) {return USE_TIME;}
+    public int getMaxUseTime(ItemStack stack) {
+        return getUseDuration();
+    }
 }

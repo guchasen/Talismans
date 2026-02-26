@@ -1,6 +1,6 @@
 package com.guchasen.talismans.entity.render;
 
-import com.guchasen.talismans.entity.entities.ThunderTalismanEntity;
+import com.guchasen.talismans.entity.entities.ThrownTalismanEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -13,18 +13,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
-public class ThunderTalismanEntityRenderer extends EntityRenderer<ThunderTalismanEntity> {
+public class ThrownTalismanEntityRenderer extends EntityRenderer<ThrownTalismanEntity> {
 
     private final ItemRenderer itemRenderer;
     // 使用一个默认的纹理，即使不使用也要提供
     private static final Identifier DEFAULT_TEXTURE = new Identifier("textures/block/stone.png");
 
-    public ThunderTalismanEntityRenderer(EntityRendererFactory.Context context) {
+    public ThrownTalismanEntityRenderer(EntityRendererFactory.Context context) {
         super(context);
         this.itemRenderer = context.getItemRenderer();
     }
     @Override
-    public void render(ThunderTalismanEntity entity, float yaw, float tickDelta, MatrixStack matrices,
+    public void render(ThrownTalismanEntity entity, float yaw, float tickDelta, MatrixStack matrices,
                        VertexConsumerProvider vertexConsumers, int light) {
         matrices.push();
         // 渲染物品
@@ -37,7 +37,7 @@ public class ThunderTalismanEntityRenderer extends EntityRenderer<ThunderTalisma
     }
 
     @Override
-    public Identifier getTexture(ThunderTalismanEntity entity) {
+    public Identifier getTexture(ThrownTalismanEntity entity) {
         return DEFAULT_TEXTURE; // 返回一个有效的纹理
     }
 }

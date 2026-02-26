@@ -36,7 +36,7 @@ public class TalismanCraftingTableBlockEntity extends BlockEntity implements Ext
 
     @Override
     public Text getDisplayName() {
-        return Text.translatable("tooltip.talismans.taliaman_table");
+        return Text.translatable("tooltip.talismans.talisman_table");
     }
 
     @Nullable

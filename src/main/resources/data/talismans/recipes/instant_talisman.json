@@ -1,0 +1,18 @@
+{
+  "type": "talismans:talisman_crafting",
+  "ingredients": [
+    {
+      "item": "talismans:talisman_pen"
+    },
+    {
+      "item": "talismans:talisman_paper"
+    },
+    {
+      "item": "minecraft:fermented_spider_eye"
+    }
+  ],
+  "output": {
+    "item": "talismans:instant_health_talisman",
+    "count": 1
+  }
+}
