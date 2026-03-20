@@ -29,6 +29,9 @@ public class ThrownTalismanEntity extends ThrownItemEntity implements FlyingItem
     public static final int TYPE_FIRE = 5;
 
     private int talismanType = TYPE_NORMAL;
+    private int lifeTicksAfterHit = 0;
+    private boolean hasHit = false;
+    private Vec3d hitPos;
 
     public ThrownTalismanEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
@@ -102,6 +105,7 @@ public class ThrownTalismanEntity extends ThrownItemEntity implements FlyingItem
                     break;
                 case TYPE_WONDERFUL:
                     // Delay 0.3s (6 ticks)
+                    spawnRandomLightning(this.getWorld(), hitPos, 5.0);
                     this.hasHit = true;
                     this.setNoGravity(true);
                     this.setVelocity(0,0,0);
@@ -112,7 +116,7 @@ public class ThrownTalismanEntity extends ThrownItemEntity implements FlyingItem
                     this.discard();
                     break;
                 case TYPE_GREATER_EXPLOSIVE:
-                    world.createExplosion(this, pos.x, pos.y, pos.z, 3.0f, false, World.ExplosionSourceType.TNT);
+                    world.createExplosion(this, pos.x, pos.y, pos.z, 4.0f, false, World.ExplosionSourceType.TNT);
                     this.discard();
                     break;
                 case TYPE_FIRE:
@@ -123,40 +127,50 @@ public class ThrownTalismanEntity extends ThrownItemEntity implements FlyingItem
         }
     }
 
-    
-    // Helper to schedule delayed tasks (Simplified for this context)
-    // Since Entity doesn't have built-in scheduler for arbitrary runnables that survive save/load easily without complex tick logic,
-    // and "discard()" is called immediately, we can't schedule on THIS entity.
-    // For "Better" and "Wonderful", we need the effect to persist after projectile death.
-    // OPTION 1: Don't discard immediately. Keep entity alive invisible/noclip until tasks done.
-    // OPTION 2: Spawn a marker entity to handle the delay.
-    // OPTION 3: Just run immediately (but requirement says "delay").
-    
-    // Let's go with OPTION 1: Keep alive.
-    
-    private int lifeTicksAfterHit = 0;
-    private boolean hasHit = false;
-    private Vec3d hitPos;
+
 
     @Override
     public void tick() {
+
         super.tick();
         if (hasHit && !this.getWorld().isClient) {
             lifeTicksAfterHit++;
-            // Logic for delayed effects
             if (talismanType == TYPE_BETTER) {
-                if (lifeTicksAfterHit == 10) {
+                if (lifeTicksAfterHit == 5) {
                      spawnLightning(this.getWorld(), hitPos);
                      spawnLightning(this.getWorld(), hitPos);
-                     this.discard();
                 }
-            } else if (talismanType == TYPE_WONDERFUL) {
-                if (lifeTicksAfterHit == 6) {
+                else if(lifeTicksAfterHit == 7){
+                    spawnLightning(this.getWorld(), hitPos);
+                    this.discard();
+                }
+            }
+            else if (talismanType == TYPE_WONDERFUL) {
+                if (lifeTicksAfterHit == 4) {
+                    spawnRandomLightning(this.getWorld(), hitPos, 7.0);
                     spawnRandomLightning(this.getWorld(), hitPos, 5.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 3.0);
+                    //this.discard();
+                }
+                else if(lifeTicksAfterHit == 10){
                     spawnRandomLightning(this.getWorld(), hitPos, 5.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 8.0);
+                }
+                else if(lifeTicksAfterHit == 20){
+                    spawnRandomLightning(this.getWorld(), hitPos, 6.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 3.0);
+                    //this.discard();
+                }
+                else if(lifeTicksAfterHit == 30){
                     spawnRandomLightning(this.getWorld(), hitPos, 5.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 7.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 9.0);
+                    //this.discard();
+                }
+                else if(lifeTicksAfterHit == 40){
                     spawnRandomLightning(this.getWorld(), hitPos, 5.0);
-                    spawnRandomLightning(this.getWorld(), hitPos, 5.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 7.0);
+                    spawnRandomLightning(this.getWorld(), hitPos, 10.0);
                     this.discard();
                 }
             } else {

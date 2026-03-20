@@ -8,11 +8,20 @@
       "item": "talismans:talisman_paper"
     },
     {
-      "item": "minecraft:lightning_rod"
+      "item": "minecraft:flint"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:paper"
     }
   ],
   "output": {
-    "item": "talismans:thunder_talisman",
+    "item": "talismans:fire_talisman",
     "count": 1
   }
 }

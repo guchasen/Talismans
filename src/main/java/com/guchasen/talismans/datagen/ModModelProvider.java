@@ -38,10 +38,14 @@ public class ModModelProvider extends FabricModelProvider {
 //        itemModelGenerator.register(ModItems.BETTER_LUCK_TALISMAN,Models.GENERATED);
 //        itemModelGenerator.register(ModItems.BETTER_STRENGTH_TALISMAN,Models.GENERATED);
 //        itemModelGenerator.register(ModItems.WONDERFUL_STRENGTH_TALISMAN,Models.GENERATED);
-        itemModelGenerator.register(ModItems.TALISMAN_PAPER,Models.GENERATED);
-        itemModelGenerator.register(ModItems.TALISMAN_PEN,Models.GENERATED);
-
-
+//        itemModelGenerator.register(ModItems.TALISMAN_PAPER, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.TALISMAN_PEN, Models.GENERATED);
+//        itemModelGenerator.register(ModItems.BETTER_THUNDER_TALISMAN,Models.GENERATED);
+//        itemModelGenerator.register(ModItems.WONDERFUL_THUNDER_TALISMAN,Models.GENERATED);
+//        itemModelGenerator.register(ModItems.EXPLOSIVE_TALISMAN,Models.GENERATED);
+//        itemModelGenerator.register(ModItems.GREATER_EXPLOSIVE_TALISMAN,Models.GENERATED);
+//        itemModelGenerator.register(ModItems.FIRE_TALISMAN,Models.GENERATED);
+            //itemModelGenerator.register(ModItems.THUNDER_CORE,Models.GENERATED);
 
     }
 }

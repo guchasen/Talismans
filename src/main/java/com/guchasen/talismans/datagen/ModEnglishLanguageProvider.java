@@ -32,8 +32,13 @@ public class ModEnglishLanguageProvider extends FabricLanguageProvider {
 //        translationBuilder.add(ModItems.WONDERFUL_STRENGTH_TALISMAN, "Wonderful Strength Talisman");
 //        translationBuilder.add(ModItems.INSTANT_HEALTH_TALISMAN, "Instant Health Talisman");
 //        translationBuilder.add(ModItems.REGENERATION_TALISMAN, "Regeneration Talisman");
-        translationBuilder.add(ModItems.TALISMAN_PEN, "Talisman Pen");
-        translationBuilder.add(ModItems.TALISMAN_PAPER, "Talisman Paper");
-
+//        translationBuilder.add(ModItems.TALISMAN_PEN, "Talisman Pen");
+//        translationBuilder.add(ModItems.TALISMAN_PAPER, "Talisman Paper");
+//        translationBuilder.add(ModItems.BETTER_THUNDER_TALISMAN,"Better Thunder Talisman" );
+//        translationBuilder.add(ModItems.WONDERFUL_THUNDER_TALISMAN,"Wonderful Thunder Talisman" );
+//        translationBuilder.add(ModItems.EXPLOSIVE_TALISMAN,"Explosive Talisman" );
+//        translationBuilder.add(ModItems.GREATER_EXPLOSIVE_TALISMAN,"Greater Explosive Talisman" );
+//        translationBuilder.add(ModItems.FIRE_TALISMAN,"Fire Talisman" );
+        //translationBuilder.add(ModItems.THUNDER_CORE, "Thunder Core");
     }
 }

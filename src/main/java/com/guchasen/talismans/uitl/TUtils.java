@@ -1,8 +1,12 @@
 package com.guchasen.talismans.uitl;
 
+import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
@@ -21,8 +25,8 @@ public class TUtils {
 
     //summon lightning in a circle randomly
     public static void spawnRandomLightning(World world, Vec3d center, double radius) {
-        double x = center.x + (world.random.nextDouble() - 0.5) * 2 * radius;
-        double z = center.z + (world.random.nextDouble() - 0.5) * 2 * radius;
+        double x = center.x + (world.random.nextDouble() - 0.5)  * radius;
+        double z = center.z + (world.random.nextDouble() - 0.5)  * radius;
         spawnLightning(world, new Vec3d(x, center.y, z));
     }
 
@@ -45,4 +49,24 @@ public class TUtils {
             }
         }
     }
+
+    //create effect cloud
+    public static void spawnEffectCloud(World world, Vec3d pos, StatusEffect effect){
+        AreaEffectCloudEntity cloud = new AreaEffectCloudEntity(world, pos.x, pos.y, pos.z);
+        cloud.addEffect(new StatusEffectInstance(effect, 100, 0));
+        world.spawnEntity(cloud);
+    }
+    public static void spawnEffectCloud(World world, Vec3d pos, StatusEffect effect, int amplifier,float radius){
+        AreaEffectCloudEntity cloud = new AreaEffectCloudEntity(world, pos.x, pos.y, pos.z);
+        cloud.setRadius( radius);
+        cloud.addEffect(new StatusEffectInstance(effect, 100, amplifier));
+        world.spawnEntity(cloud);
+    }
+    public static void spawnEffectCloud(World world, Vec3d pos, StatusEffect effect,  float radius){
+        AreaEffectCloudEntity cloud = new AreaEffectCloudEntity(world, pos.x, pos.y, pos.z);
+        cloud.setRadius(radius);
+        cloud.addEffect(new StatusEffectInstance(effect, 100, 0));
+        world.spawnEntity(cloud);
+    }
+
 }

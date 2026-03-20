@@ -3,7 +3,7 @@
 	"id": "talismans",
 	"version": "${version}",
 	"name": "Talismans",
-	"description": "向游戏添加了一些道家风格的符箓，这些符箓有着不同的功能、效果",
+	"description": "向游戏添加了一些道家风格的符箓，这些符箓有着不同的功能效果",
 	"authors": [
 		"GuChasen"
 	],

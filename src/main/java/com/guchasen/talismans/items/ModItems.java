@@ -22,7 +22,7 @@ public class ModItems {
     }
 
     //common item
-    public static final Item THUNDER_CORE = registerItem("thunder_core", new Item(new Item.Settings().rarity(Rarity.UNCOMMON).fireproof()));
+    //public static final Item THUNDER_CORE = registerItem("thunder_core", new Item(new Item.Settings().rarity(Rarity.UNCOMMON).fireproof()));
 
     // 制符工具
     public static final Item TALISMAN_PEN = registerItem("talisman_pen", new TalismanPenItem(new Item.Settings().rarity(Rarity.UNCOMMON)));

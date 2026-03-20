@@ -8,11 +8,18 @@
       "item": "talismans:talisman_paper"
     },
     {
+      "item": "talismans:better_thunder_talisman"
+    },
+    {
+      "item": "talismans:thunder_talisman"
+    },
+    {
       "item": "minecraft:lightning_rod"
     }
+
   ],
   "output": {
-    "item": "talismans:thunder_talisman",
+    "item": "talismans:wonderful_thunder_talisman",
     "count": 1
   }
 }

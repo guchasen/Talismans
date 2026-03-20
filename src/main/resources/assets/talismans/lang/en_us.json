@@ -24,5 +24,11 @@
   "tooltip.talismans.talisman_table": "Talisman Craft Table",
   "item.talismans.talisman_paper": "Talisman Paper",
   "item.talismans.talisman_pen": "Talisman Pen",
-  "button.talismans.craft": "Create"
+  "button.talismans.craft": "Create",
+  "item.talismans.better_thunder_talisman": "Better Thunder Talisman",
+  "item.talismans.explosive_talisman": "Explosive Talisman",
+  "item.talismans.fire_talisman": "Fire Talisman",
+  "item.talismans.greater_explosive_talisman": "Greater Explosive Talisman",
+  "item.talismans.wonderful_thunder_talisman": "Wonderful Thunder Talisman"
+
 }

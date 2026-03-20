@@ -2,8 +2,10 @@ package com.guchasen.talismans.event;
 
 import com.guchasen.talismans.Talismans;
 import com.guchasen.talismans.items.ModItems;
+import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -22,14 +24,17 @@ public class ModEvents {
 
         // 注册实体被击杀事件
         ServerEntityCombatEvents.AFTER_KILLED_OTHER_ENTITY.register((world, entity, killedEntity) -> {
+
             // 检查被击杀的实体是否是流浪商人
             if (killedEntity instanceof WanderingTraderEntity) {
-                handleWanderingTraderDeath(world, (WanderingTraderEntity) killedEntity,ModItems.INVISIBILITY_TALISMAN);
+                handleItemDrop(world, (WanderingTraderEntity) killedEntity,ModItems.INVISIBILITY_TALISMAN);
             }
         });
+
     }
 
-    private static void handleWanderingTraderDeath(ServerWorld world, WanderingTraderEntity trader, Item item) {
+
+    private static void handleItemDrop(ServerWorld world, Entity entity, Item item) {
         // 生成随机数判断是否掉落
         if (world.random.nextDouble() < DROP_CHANCE) {
             // 创建物品
@@ -38,9 +43,9 @@ public class ModEvents {
             // 在商人死亡位置生成物品实体
             ItemEntity itemEntity = new ItemEntity(
                     world,
-                    trader.getX(),
-                    trader.getY(),
-                    trader.getZ(),
+                    entity.getX(),
+                    entity.getY(),
+                    entity.getZ(),
                     itemStack
             );
 
